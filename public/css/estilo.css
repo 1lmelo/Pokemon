@@ -1,0 +1,90 @@
+.botao{
+	font:bold 50px Tahoma, Geneva, sans-serif;
+	font-style:normal;
+	color:#ffffff;
+	background:#d91515;
+	border:0px solid #ffffff;
+	text-shadow:-15px 0px 20px #222222;
+	box-shadow:0px 0px 0px #000000;
+	-moz-box-shadow:0px 0px 0px #000000;
+	-webkit-box-shadow:0px 0px 0px #000000;
+	border-radius:50px 50px 50px 50px;
+	-moz-border-radius:50px 50px 50px 50px;
+	-webkit-border-radius:50px 50px 50px 50px;
+	width:250px;
+	padding:25px 42px;
+	cursor:pointer;
+	margin:0 auto;
+	position: relative;
+	left: 38.5%;
+	margin-top: 57%;
+}
+
+.botao:active{
+cursor:pointer;
+position:relative;
+top:2px;
+}
+
+.botao:hover{
+	color: yellow;
+}
+
+.menu{
+	position: absolute;
+	background: linear-gradient(to left, #ff0000 0%, #000000 120%);
+	min-height: 820px;
+	min-width: 200px;
+}
+
+.item{
+	color: white;
+	font-family: 
+}
+
+.item:hover{
+	color: yellow;
+
+}
+
+.busca{
+	margin-top: 3%;
+	left: 25%;
+}
+
+.btnBusca{
+	position: relative;
+	bottom:5px;
+}
+
+.jumbotron{
+	position: relative;
+	width: 90%;
+	height: 20%;
+	left: 15%;
+}
+
+.pagination {
+  display: inline-block;
+  position: absolute;
+  left: 30%;
+}
+
+.pagination a {
+  color: black;
+  float: left;
+  padding: 8px 16px;
+  text-decoration: none;
+
+}
+
+.pagination a.active {
+  background-color: #4CAF50;
+  color: red;
+}
+
+.pagination a:hover:not(.active) {
+	background-color: #ddd;
+}
+
+

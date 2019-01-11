@@ -1,0 +1,1 @@
+angular.module('pokemon', ['angularUtils.directives.dirPagination']);	

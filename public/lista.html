@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="pt-br" ng-app="pokemon">
+<head>
+	<title>PokemonList - Encontre aqui seu Pokemon</title>
+	<link rel="stylesheet" type="text/css" href="css/estilo.css">
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+	<style>
+		body{
+			background-image: url("../img/fundo3.jpg");
+			background-size: cover;
+			background-repeat: no-repeat;
+		}	
+
+	</style>
+	<script src="js/lib/angular.min.js"></script>
+	<script src="js/lib/angular-route.min.js"></script>
+	<script src="js/main.js"></script>
+	<script src="js/dirPagination.js"></script>
+	<script src="js/controllers/lista-controller.js"></script>
+	<script src="//code.angularjs.org/1.4.4/angular-route.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.5/angular.min.js"></script>
+</head>
+<body ng-controller="PokemonController">
+	<nav class="navbar navbar-dark bg-dark">
+			<a href="dashboard.html"><img src="img/logo.png" class="logo" width="200px"></a>
+		</nav>
+	<div class="menu">
+	<ul class="nav flex-column">
+	  <li class="nav-item">
+	    <a class="nav-link active item" href="lista.html">Lista de Pokemons</a>
+	  </li>
+	  <li class="nav-item">
+	    <a class="nav-link active item" href="index.html">Sair</a>
+	  </li>
+	</ul> 
+</div>
+
+<div id="main" class="container">
+    <div id="top" class="row">
+ 
+    <div class="col-md-8 busca">
+        <div class="input-group h2">
+            <input name="data[search]" class="form-control" id="search" type="text" placeholder="Pesquisar Pokemon" 
+            ng-model="filtro" ng-model-options="{ debounce: 500 }">
+        </div>
+    </div>
+</div> <!-- /#top -->
+ 
+     <hr/>
+     
+     <div class="jumbotron">
+
+ <table class="table table-striped col-md-12 ">
+		  <thead>
+		    <tr>
+		      <th scope="col">Id</th>
+		      <th scope="col">Nome</th>
+		      <th scope="col">Visualizar Informações</th>
+		    </tr>
+		  </thead>
+		  <tbody>
+		    <tr dir-paginate="pokemon in pokemon | filter: filtro | itemsPerPage:7">
+		      <th scope="row">{{pokemon.pokedex_entry}}</th>
+		      <td>{{pokemon.id}}</td>
+		      <td><a href="visualizar.html" class="btn btn-primary">Visualizar</button></a></td>
+		    </tr>
+		  </tbody>
+</table>
+	<dir-pagination-controls max-size="3" boundary-links="true" class="pagination"></dir-pagination-controls>
+     </div> <!-- /#list -->
+ </div>  <!-- /#main -->
+
+ 
+
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
+</body>
+</html>
